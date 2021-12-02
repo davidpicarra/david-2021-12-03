@@ -86,15 +86,13 @@ const Home: NextPage = () => {
 
   const calculateData = () => {
     // vertical dimensions
-    // - 250px height when mobile
+    // - 200px height when mobile
     // - 66px per row (2 tables vertically)
     //
     // horizontal dimensions
     // - 200px height from top when not mobile
     // - 33px per row
-    const rowsToShow = Math.floor(
-      (height - (isVertical ? 250 : 200)) / (isVertical ? 66 : 33)
-    );
+    const rowsToShow = Math.floor((height - 200) / (isVertical ? 66 : 33));
     send("CALCULATE", { rowsToShow });
   };
 

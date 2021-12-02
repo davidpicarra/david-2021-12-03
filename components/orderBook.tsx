@@ -51,8 +51,8 @@ const OrderBookComponent: React.FC<OrderBookProps> = ({
           base: `auto`,
         }}
         gridTemplateRows={{
-          md: "50px 1fr 50px",
-          base: "50px 1fr 25px 1fr 50px",
+          md: "30px 1fr 50px",
+          base: "30px 1fr 25px 1fr 50px",
         }}
         p="10"
         pb="0"
@@ -63,11 +63,10 @@ const OrderBookComponent: React.FC<OrderBookProps> = ({
       >
         <GridItem gridArea="title">
           <Heading size="md">Order book</Heading>
-          {updateInterval}
         </GridItem>
 
-        <GridItem gridArea="spread">
-          <Text textAlign={isVertical ? "center" : "inherit"}>
+        <GridItem gridArea="spread" gridColumnStart="1">
+          <Text textAlign="center">
             Spread {formatPrice(spread)} ({spreadPercentage.toFixed(2)}%)
           </Text>
         </GridItem>
